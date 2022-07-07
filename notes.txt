@@ -1,0 +1,13 @@
+#### NODE VERSION PROBLEM/FIX
+
+sudo npm install -g n # Install N
+
+sudo n 14.15.4 # Install a specific version of Node
+
+# n run 14.15.4 index.js # Run a script without change the global path
+
+# n which 14.15.4 # Search the path of the installed Node
+
+n 14.15.4 # Set the installed Node as global, requires the terminal to be restarted
+
+serverless deploy
