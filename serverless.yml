@@ -20,12 +20,26 @@ resources:
     UsersTable: ${file(resources/UsersTable.yml):UsersTable}
 
 functions:
-  users:
+  usersPost:
     handler: src/handlers/users.handler
     events:
       - http:
           method: POST
           path: /users
+
+  usersGet:
+    handler: src/handlers/usersGet.handler
+    events:
+      - http:
+          method: GET
+          path: /users
+
+  userGet:
+    handler: src/handlers/userGet.handler
+    events:
+      - http:
+          method: GET
+          path: /user/{id}
 
 custom:
   UsersTable:
