@@ -3,6 +3,8 @@ service: sls-course
 plugins:
   - serverless-bundle
   - serverless-pseudo-parameters
+  - serverless-dynamodb-local
+  - serverless-offline
 
 provider:
   name: aws
@@ -45,3 +47,12 @@ custom:
   UsersTable:
     name: !Ref UsersTable
     arn: !GetAtt UsersTable.Arn
+  dynamodb:
+    stages:
+      - dev
+    start:
+      port: 8000
+      inMemory: true
+      migrate: true
+    migration:
+      dir: offline/migrations

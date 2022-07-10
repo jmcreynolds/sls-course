@@ -11,3 +11,39 @@ sudo n 14.15.4 # Install a specific version of Node
 n 14.15.4 # Set the installed Node as global, requires the terminal to be restarted
 
 serverless deploy
+
+
+#########
+Serverless Offline
+#########
+
+1.) add plugin
+
+plugins:
+  - serverless-bundle
+  - serverless-pseudo-parameters
+  - serverless-offline
+
+2.) install plugin
+
+% npm install --save-dev serverless-offline
+
+3.) Fire it up 
+
+% sls offline start 
+
+#########
+DynamoDB Offline
+#########
+
+1.) Add plugin
+
+plugins:
+  - serverless-bundle
+  - serverless-pseudo-parameters
+  - serverless-offline
+  - serverless-dynamodb-local
+
+2.) install plugin
+
+% npm install --save-dev serverless-dynamodb-local
