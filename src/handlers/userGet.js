@@ -1,8 +1,13 @@
 import AWS from 'aws-sdk';
 import commonMiddleware from '../../lib/commonMiddleware';
 import createError from 'http-errors';
+import { offline_options } from '../../offline/lib/dynamo_data';
 
-const dynamodb = new AWS.DynamoDB.DocumentClient();
+let options = offline_options();
+process.env.USERS_TABLE_NAME = 'UserTable-dev';
+
+
+const dynamodb = new AWS.DynamoDB.DocumentClient(options);
 
 async function userGet(event, context) {
     let user;

@@ -1,15 +1,10 @@
 import AWS from 'aws-sdk';
 import commonMiddleware from '../../lib/commonMiddleware';
 import createError from 'http-errors';
+import { offline_options } from '../../offline/lib/dynamo_data';
 
-let options = {};
-
-if (process.env.IS_OFFLINE){
-    options = {
-        region: 'localhost',
-        endpoint: 'http://localhost:8000'
-    };
-}
+let options = offline_options();
+process.env.USERS_TABLE_NAME = 'UserTable-dev';
 
 const dynamodb = new AWS.DynamoDB.DocumentClient(options);
 

@@ -22,6 +22,7 @@
     "@middy/http-event-normalizer": "2.5.7",
     "@middy/http-json-body-parser": "2.5.7",
     "aws-sdk": "^2.1169.0",
+    "esm": "^3.2.25",
     "http-errors": "^2.0.0",
     "uuid": "^8.3.2"
   }

@@ -54,5 +54,6 @@ custom:
       port: 8000
       inMemory: true
       migrate: true
+      shareDb: true
     migration:
       dir: offline/migrations
