@@ -51,6 +51,7 @@ custom:
     stages:
       - dev
     start:
+      host: dynamodb.local
       port: 8000
       inMemory: true
       migrate: true

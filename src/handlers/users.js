@@ -11,12 +11,13 @@ const dynamodb = new AWS.DynamoDB.DocumentClient(options);
 
 
 async function users(event, context) {
-  const { username } = event.body;
+  const { firstname, lastname } = event.body;
   const now = new Date();
 
   const user = {
     id: uuid(),
-    username,
+    firstname,
+    lastname,
     createdAt: now.toISOString(),
   };
 
